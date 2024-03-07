@@ -63,7 +63,12 @@ function displayBooks() {
       <div>${title}</div>,
       <div>${author}</div>,
       <div>${pages}</div>,
-      <div>${read}</div>
+      <div>${read}</div>,
+      <button class="js-del-btn" onclick = "
+        myLibrary.splice(${i}, 1);
+        displayBooks();
+      " 
+      >Delete Book</button>
     `;
     display += html;
   }
