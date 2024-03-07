@@ -47,6 +47,8 @@ bookForm.addEventListener('submit', (event) => {
   ));
 
   console.table(myLibrary);
+  displayBooks();
+  bookForm.style = "display: none";
 });
 
 function displayBooks() {
@@ -69,3 +71,8 @@ function displayBooks() {
   output.innerHTML = display;
 }
 displayBooks();
+
+const addNewBook = document.querySelector('.js-add-btn');
+addNewBook.addEventListener('click', () => {
+  bookForm.style = "display: block";
+});
