@@ -48,3 +48,24 @@ bookForm.addEventListener('submit', (event) => {
 
   console.table(myLibrary);
 });
+
+function displayBooks() {
+  let display = '';
+  for(let i = 0; i < myLibrary.length; i++) {
+    let title = myLibrary[i].title;
+    let author = myLibrary[i].author;
+    let pages = myLibrary[i].pages;
+    let read = myLibrary[i].read;
+
+    let html = `
+      <div>${title}</div>,
+      <div>${author}</div>,
+      <div>${pages}</div>,
+      <div>${read}</div>
+    `;
+    display += html;
+  }
+  console.log(display);
+  output.innerHTML = display;
+}
+displayBooks();
