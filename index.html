@@ -22,17 +22,11 @@
       <label for="pages">Book Pages</label>
       <input type="number" id="pages" name="Book Pages" placeholder="Book No. of Pages" required>
     </div>
-    <fieldset>
-      <legend>Have you Read this book or not?</legend>
-      <div>
-        <label for="not-read">Not Read Yet</label>
-        <input type="radio" name="read" value="Not Read Yet" id="not-read" required>
-      </div>
-      <div>
-        <label for="read">Read</label>
-        <input type="radio" name="read" value="Read" id="read" required>
-      </div>
-    </fieldset>
+    <div>
+      <label for="read">Read this Book?</label>
+      <input type="text" name="read" id="read" placeholder="Yes or No" required>
+    </div>
+    
     <button type="submit" class="js-submit-btn">Submit Book</button>
   </form>
 
