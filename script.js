@@ -14,11 +14,11 @@ function addBookToLibrary(name) {
   return myLibrary;
 }
 
-const book1 = new Book('The Reacher', 'Jason Statam', 329, 'Not Read Yet');
-const book2 = new Book('House of Flames ', 'Brad Taylor', 240, 'Read');
+const book1 = new Book('The Reacher', 'Jason Statam', 329, 'No');
+const book2 = new Book('House of Flames ', 'Brad Taylor', 240, 'Yes');
 
 console.table(addBookToLibrary(book1));
-console.log(addBookToLibrary(book2));
+console.table(addBookToLibrary(book2));
 
 const bookForm = document.querySelector('#bookForm');
 
@@ -31,16 +31,8 @@ bookForm.addEventListener('submit', (event) => {
   console.log(author);
   const pages = document.querySelector('#pages').value;
   console.log(pages);
-  const radio = document.getElementsByName('read');
-  console.log(radio);
-  
-  let read = '';
-   for(let i = 0; i < radio.length; i++) {
-    if (radio[i].checked) {
-      read += radio[i].value;
-    }
-   }
-   console.log(read);
+  const read = document.querySelector('#read').value;
+  console.log(read);
 
   myLibrary.push(new Book (
   title, author, Number(pages), read
@@ -64,6 +56,11 @@ function displayBooks() {
       <div>${author}</div>,
       <div>${pages}</div>,
       <div>${read}</div>,
+      <button class="js-read-status-btn" onclick="
+        myLibrary[${i}].read = myLibrary[${i}].read === 'Yes'?'No': 'Yes';
+        console.log(myLibrary);
+        displayBooks();
+      " >Read Status</button>
       <button class="js-del-btn" onclick = "
         myLibrary.splice(${i}, 1);
         displayBooks();
