@@ -52,10 +52,10 @@ function displayBooks() {
     let read = myLibrary[i].read;
 
     let html = `
-      <div>${title}</div>,
-      <div>${author}</div>,
-      <div>${pages}</div>,
-      <div>${read}</div>,
+      <div>${title}</div>
+      <div>${author}</div>
+      <div>${pages}</div>
+      <div>${read}</div>
       <button class="js-read-status-btn" onclick="
         myLibrary[${i}].read = myLibrary[${i}].read === 'Yes'?'No': 'Yes';
         console.log(myLibrary);
